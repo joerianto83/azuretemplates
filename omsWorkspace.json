@@ -662,28 +662,6 @@
                     }
                 }
             ]
-        },
-        {
-            "apiVersion": "2015-11-01-preview",
-            "type": "Microsoft.OperationsManagement/solutions",
-            "name": "[concat(variables('batch1').solutions[copyIndex()].Name)]",
-            "location": "[parameters('omsWorkspaceRegion')]",
-            "dependsOn": [
-                "[concat('Microsoft.OperationalInsights/workspaces/', parameters('omsWorkspaceName'))]"
-            ],
-            "copy": {
-                "name": "solutionCopy",
-                "count": "[length(variables('batch1').solutions)]"
-            },
-            "properties": {
-                "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('omsWorkspaceName'))]"
-            },
-            "plan": {
-                "name": "[variables('batch1').solutions[copyIndex()].name]",
-                "product": "[concat('OMSGallery/', variables('batch1').solutions[copyIndex()].marketplaceName)]",
-                "promotionCode": "",
-                "publisher": "Microsoft"
-            }
         }
     ],
     "outputs": {}
