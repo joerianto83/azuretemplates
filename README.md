@@ -1,0 +1,2 @@
+# azuretemplates
+azure templates
