@@ -40,18 +40,7 @@
                 "retentionInDays": 180
             },
             "resources": [
-                {
-                    "name": "AzureActivityLog",
-                    "type": "datasources",
-                    "apiVersion": "2015-11-01-preview",
-                    "dependsOn": [
-                        "[concat('Microsoft.OperationalInsights/workspaces/', parameters('omsWorkspaceName'))]"
-                    ],
-                    "kind": "AzureActivityLog",
-                    "properties": {
-                        "linkedResourceId": "[concat(subscription().id, '/providers/Microsoft.Insights/eventTypes/management')]"
-                    }
-                },
+
                 {
                     "apiVersion": "2017-03-15-preview",
                     "name": "[concat(parameters('omsWorkspaceName'), '/', 'HyperV1')]",
